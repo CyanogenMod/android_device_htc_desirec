@@ -1,0 +1,11 @@
+ro.product.model=HTC Droid Eris
+ro.product.brand=htc
+ro.product.name=desirec
+ro.product.device=desirec
+ro.product.board=desirec
+# ro.build.product is obsolete; use ro.product.device
+ro.build.product=desirec
+
+# GSM
+ro.telephony.default_network=4
+

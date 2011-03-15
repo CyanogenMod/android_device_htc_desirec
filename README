@@ -1,0 +1,33 @@
+Gingerbread Vendor Tree for DesireC (ERIS)
+
+WARNING!  PLEASE DELETE THE "RECOVERY" FOLDER FROM THE ROM AFTER BUILD, BEFORE FLASHING OR DISTRO... thank you.
+If anyone can help me keep recovery from being added to the rom, please msg me!
+
+NOTE:  If you're going to use this as a standalone, please take the 'vendor' folder out of the tree
+and drop it into the root of your build, overwriting any files.  If you don't do this, you won't
+have any make options or 'product file' for DesireC (ERIS) and won't be able to build.
+
+So to clearify...
+
+- vendorsetup.sh (must be moved to /vendor/)
+- AndroidProducts.mk & cyanogen_desirec.mk (must be moved to vendor/cyanogen/products)
+
+Basic steps to build:
+
+1 - Get local copy of CM7 respository
+2 - Get copy of the device tree into device/htc/desirec
+3 - Run get-rommanager in vendor/cyanogen directory
+4 - Get proprietary files into 'vendor/htc/desirec/proprietary'
+        a) Put ROM (update.zip) in repo root and run 'unzip-files.sh' from the 'device/htc/desirec' directory
+        b) Use 'adb' to pull files from usb connected device by running 'extract-files.sh'
+        c) Copy files from expanded system directory on your local machine by running 'copy-files.sh'
+        d) Copy files from 'device/htc/desirec/proprietary' directory (also needs 'setup-makefiles.sh')
+5 - Setup build environment by sourcing envsetup file '. build/envsetup.sh'
+6 - Run Lunch to select the build target 'lunch cyanogen_desirec-eng'
+7 - Build the system with 'make otapackage -j4'
+
+NOTE: (the 4 is how many cpu cores you have + 1 ... I have a triple core for example)
+
+Thanks to Conap & gnarlyc!
+
+
