@@ -21,7 +21,6 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, device/htc/desirec/device_desirec_eu.mk)
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
